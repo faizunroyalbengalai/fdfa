@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>faa - nginx</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            background: #0f1117;
+            color: #e2e8f0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #1a1f2e;
+            border: 1px solid #2d3748;
+            border-radius: 9999px;
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
+            color: #68d391;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #68d391;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #f7fafc;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        h1 span {
+            color: #63b3ed;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #718096;
+            margin-bottom: 2.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-card {
+            background: #1a1f2e;
+            border: 1px solid #2d3748;
+            border-radius: 0.75rem;
+            padding: 1rem 1.25rem;
+            text-align: left;
+        }
+
+        .info-card .label {
+            font-size: 0.7rem;
+            color: #4a5568;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-card .value {
+            font-size: 0.95rem;
+            color: #e2e8f0;
+            font-weight: 500;
+        }
+
+        .footer {
+            font-size: 0.75rem;
+            color: #4a5568;
+        }
+
+        .footer a {
+            color: #63b3ed;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="badge">
+            <span class="status-dot"></span>
+            Deployed &amp; Running
+        </div>
+
+        <h1>faa / <span>nginx</span></h1>
+        <p class="subtitle">Successfully deployed on Amazon EC2</p>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="label">Project</div>
+                <div class="value">faa</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Application</div>
+                <div class="value">nginx</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Region</div>
+                <div class="value">us-east-1</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Target</div>
+                <div class="value">EC2 (Direct)</div>
+            </div>
+        </div>
+
+        <p class="footer">
+            Served by <a href="https://nginx.org" target="_blank" rel="noopener">nginx</a>
+            &nbsp;&middot;&nbsp;
+            Provisioned with <a href="https://www.ansible.com" target="_blank" rel="noopener">Ansible</a>
+        </p>
+    </div>
+</body>
+</html>
